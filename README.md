@@ -15,6 +15,8 @@
 
 
 ##前言
+eclipse启动 jvm参数为:-DBASE_HOME=xxx\super-diamond-enhance\super-diamond-server\src\main
+
 super-diamond-enhance基于super-diamond,变动点如下:
 
 * 部署方式从单点到集群的改变
