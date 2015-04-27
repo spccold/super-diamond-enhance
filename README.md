@@ -1,17 +1,15 @@
 #配置中心使用手册
-## 文档修改历史
-|序号|修改内容|修改人|发布时间|
-|-
-|1|创建文档|机冷|2015年4月27日|
+
 ## 名词介绍
 * DRM
 >
 	Distributed Resource Manager,分布式资源管理器，在本系统中特指被分布式管理器所管理的分布式资源对象,是配置的一种
->
+
+
 * CONFIG
 >
-	区别于DRM，类似于之前通过<context:property-placeholder/>注入到bean中的配置
->
+	区别于DRM，类似于之前通过<context:property-placeholder	/>注入到bean中的配置
+
 
 ##前言
 super-diamond-enhance基于super-diamond,变动点如下:
