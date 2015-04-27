@@ -45,7 +45,7 @@ super-diamond-enhance基于super-diamond,变动点如下:
         	<artifactId>super-diamond-client</artifactId>                  
         	<version>1.1.1</version>    
    		</dependency> 
->   		    
+   		    
 * 业务系统的spring配置文件中引入super-diamond-client的spring配置文件,写法如下:
 
 	>				
