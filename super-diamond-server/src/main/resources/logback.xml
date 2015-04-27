@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="true">
+	<!-- 上线文名称，一般为项目名称 -->
+	<contextName>super-diamond-server</contextName>
+
+	<!-- properties定义 -->
+	<!-- 日志文件目录 -->
+	<property name="logdir" value="${BASE_HOME}/logs" />
+
+	<!-- 标准输出Appender -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>
+				%date %contextName [%thread] %-5level %logger{80} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+
+	<appender name="FILE-ROOT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${logdir}/%d{yyyy-MM,aux}/%d{yyyy-MM-dd,aux}/others-%d{yyyy-MM-dd}-%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 100MB -->
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<!-- keep 90 days' worth of history -->
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+
+		<!-- Since logback 0.9.19, FileAppender and sub-classes expect an encoder and no longer take a layout. -->
+		<encoder>
+			<pattern>%d %contextName %-5level [%thread] %logger{0}: %msg%n
+			</pattern>
+			<!-- if false,this quadruples logging throughput -->
+			<immediateFlush>true</immediateFlush>
+			<!-- if true,logback can insert the pattern used for the log output at the top of log files -->
+			<outputPatternAsHeader>false</outputPatternAsHeader>
+		</encoder>
+	</appender>
+	
+	<appender name="FILE-DIAMOND-SERVER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${logdir}/%d{yyyy-MM,aux}/%d{yyyy-MM-dd,aux}/diamond-server-%d{yyyy-MM-dd}-%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 100MB -->
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<!-- keep 90 days' worth of history -->
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+
+		<!-- Since logback 0.9.19, FileAppender and sub-classes expect an encoder and no longer take a layout. -->
+		<encoder>
+			<pattern>%d %contextName %-5level [%thread] %logger{0}: %msg%n
+			</pattern>
+			<!-- if false,this quadruples logging throughput -->
+			<immediateFlush>true</immediateFlush>
+			<!-- if true,logback can insert the pattern used for the log output at the top of log files -->
+			<outputPatternAsHeader>false</outputPatternAsHeader>
+		</encoder>
+	</appender>
+	
+	<logger name="com.github.diamond" level="WARN" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<!-- <appender-ref ref="FILE-DIAMOND-SERVER" /> -->
+	</logger>
+	
+	<!-- Root Logger -->
+	<root level="WARN">
+		<appender-ref ref="STDOUT" />
+		<!-- <appender-ref ref="FILE-ROOT" /> -->
+	</root>
+</configuration>

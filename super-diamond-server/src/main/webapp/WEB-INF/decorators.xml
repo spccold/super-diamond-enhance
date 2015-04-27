@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<decorators defaultdir="/decorators">
+	<decorator name="common" page="/WEB-INF/layout/_common.jsp">
+		<pattern>/index</pattern>
+		<!-- <pattern>/queryClients</pattern> -->
+		<pattern>/queryConfig</pattern>
+		<pattern>/moduleManage/*</pattern>
+		<pattern>/user/*</pattern>
+		<pattern>/project/*</pattern>
+	</decorator>
+
+	<decorator name="profile" page="/WEB-INF/layout/_profile.jsp">
+		<pattern>/profile/*</pattern>
+	</decorator>
+	
+	<decorator name="query" page="/WEB-INF/layout/_query.jsp">
+		<pattern>/query/*</pattern>
+	</decorator>
+
+	<decorator name="template" page="/WEB-INF/layout/_template.jsp">
+		<pattern>/moduleManage/detail</pattern>
+		<pattern>/moduleManage/detail/*</pattern>
+	</decorator>
+	
+	<decorator name="template" page="/WEB-INF/layout/_import.jsp">
+		<pattern>/moduleManage/moduleList</pattern>
+	</decorator>
+</decorators>
