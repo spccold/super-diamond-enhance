@@ -1,7 +1,7 @@
-#配置中心使用手册
+# 配置中心使用手册
 
-## 问题交流
-* EMAIL: kgw1681682009@126.com
+## 注意
+本项目不在维护，用户可选择[携程的apollo](https://github.com/ctripcorp/apollo)或者[百度的disconf](https://github.com/knightliao/disconf)
 
 ## 名词介绍
 * DRM
@@ -14,7 +14,7 @@
 	区别于DRM，类似于之前通过<context:property-placeholder	/>注入到bean中的配置
 
 
-##前言
+## 前言
 eclipse启动 jvm参数为:-DBASE_HOME=xxx\super-diamond-enhance\super-diamond-server\src\main
 
 super-diamond-enhance基于super-diamond,变动点如下:
